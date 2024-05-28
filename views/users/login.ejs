@@ -1,0 +1,87 @@
+<%- include('../layouts/header') %>
+
+
+
+
+
+
+
+
+  <section class="">
+
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container m-5">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Welcom To  <br />
+              <span class="text-primary">Voosh</span>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+              Voosh is a trailblazing force in the food tech sector, born out of the need for a more intelligent, seamless approach to restaurant management. We understand the challenges facing the restaurant industry - complex operations, inefficiencies, and the constant need to drive growth. That's where we step in.
+            </p>
+          </div>
+
+          <div class="col-lg-6 mb-5 mb-lg-0 ">
+            <div class="card m-5 shadow" style="border: none;">
+              <div class="card-body py-5 px-md-5">
+                <form id="login-form"  action="/login" method="post">
+                  <h2>Login</h2><br>
+
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">Email address</label>
+                    <input id="email" type="email" name="email"  class="form-control" />
+                    <div class="error"></div>
+
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example4">Password</label>
+                    <input id="password" type="password" name="password"  class="form-control" />
+                    <div class="error"></div>
+
+                  </div>
+
+                  <div id="invalid" style="height: 40px;">
+                    <% if(typeof message !=='undefined' ){ %>
+                      <p>
+                      <p class="text-center " style="color: red; font-size: 15px" id="errorMessage">
+                        <%= message %>
+                      </p>
+                      </p>
+                      <% } %>
+
+                  </div>
+
+
+                  <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Login
+                  </button>
+
+
+                  <div class="text-center">
+                    <p>Haven't registered yet?<a href="/register"> Sign up</a> or <a href="/admin/login">Admin
+                        login</a></p>
+                  
+
+                    <button type="button" class="btn btn-link btn-floating mx-1">
+                      <i class="fab fa-google"></i>
+                    </button>
+
+                   
+
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <%- include('../layouts/footer.ejs') %>

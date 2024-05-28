@@ -1,0 +1,97 @@
+<%- include('../layouts/header.ejs') %>
+
+
+
+
+<section class="">
+  
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container m-5">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Admin gateway  <br />
+              <span class="text-primary">User Management system</span>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+          
+User Management Pro is an essential application for organizations and digital platforms, simplifying user account administration with its intuitive interface and robust security features.
+            </p>
+          </div>
+  
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card m-5 shadow" style="border: none;">
+              <div class="card-body py-5 px-md-5">
+                <form id="login-form"  action="" method="POST">
+               <h2> Admin Login</h2><br>
+  
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">Email address</label>
+                    <input id="email" type="email" name="email" class="form-control" />
+                    <div class="error"></div>
+                   
+                  </div>
+  
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example4">Password</label>
+                    <input id="password" type="password" name="password" class="form-control"  />
+                    <div class="error"></div>
+                   
+                  </div>
+
+                  <div id="invalid" style="height: 30px;">
+                    <%
+                    if(typeof message !=='undefined'){
+                       
+                       
+                        %>
+                        <p class="text-center " style="color: red; font-size: 15px" id="errorMessage"><%= message %></p>
+                    
+                        <%
+                    
+                    }
+                    %></div>
+  
+       
+                  <!-- Submit button -->
+                  <input type="submit" class="btn btn-primary btn-block mb-4" value="Admin login">
+                     
+                </input>
+                  <div class="text-center">
+                    <p>Back to <a href="/">User login</a> or <a href="/register">User signup</a></p>
+
+                  </div>
+                 
+  
+                  <!-- Register buttons -->
+                  <div class="text-center">
+                  
+                    <button type="button" class="btn btn-link btn-floating mx-1">
+                      <i class="fab fa-facebook-f"></i>
+                    </button>
+  
+                    <button type="button" class="btn btn-link btn-floating mx-1">
+                      <i class="fab fa-google"></i>
+                    </button>
+  
+                    <button type="button" class="btn btn-link btn-floating mx-1">
+                      <i class="fab fa-twitter"></i>
+                    </button>
+  
+                    <button type="button" class="btn btn-link btn-floating mx-1">
+                      <i class="fab fa-github"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+
+<%- include('../layouts/footer.ejs') %>

@@ -1,0 +1,112 @@
+<%- include('../layouts/header') %>
+
+
+
+       
+            <section class="">
+               
+                <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+                    <div class="container m-3">
+                        <div class="row gx-lg-5 align-items-center">
+                            <div class="col-lg-6 mb-5 mb-lg-0">
+                                <h1 class="my-5 display-3 fw-bold ls-tight">
+                                    Join the force <br />
+                                    <span class="text-primary">Become a member</span>
+                                </h1>
+                                <p style="color: hsl(217, 10%, 50.8%)">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                                    quibusdam tempora at cupiditate quis eum maiores libero
+                                    veritatis? Dicta facilis sint aliquid ipsum atque?
+                                </p>
+                            </div>
+
+                            <div class="col-lg-6 mb-5 mb-lg-0">
+                                <div class="card shadow"style="border: none;">
+                                    <div class="card-body py-5 px-md-5">
+                                        <form id="submit-form"  action="" method="post" enctype="multipart/form-data">
+                                            <h2>New Registration</h2><br>
+                                            <div class="row">
+                                                <div class="form-outline mb-4">
+                                                    <div class="form-outline">
+                                                        <label class="form-label" for="form3Example1"> Name</label>
+                                                        <input type="text" name="name" class="form-control" />
+                                                        <div class="error"></div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label" for="form3Example3">Email address</label>
+                                                <input type="email" name="email"  class="form-control" />
+                                                <div class="error"></div>
+
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label" for="form3Example3">Mobile</label>
+                                                <input type="text" name="mno" class="form-control" />
+                                                <div class="error"></div>
+
+                                            </div>
+
+
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label" for="form3Example4">Profile image</label>
+                                                <input type="file" name="image" class="form-control" />
+
+                                            </div>
+                                    
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label" for="form3Example4">Password</label>
+                                                <input id="password" type="password" name="password"  class="form-control" />
+                                                <div class="error"></div>
+
+                                            </div>
+
+
+                                 
+
+
+                                            <% if(typeof message !=='undefined' ){ %>
+                                                <p style="color: green;">
+                                                    <%=message%>
+                                                </p>
+                                                <% } %>
+
+                                                    <input type="submit" value=" Sign up" class="btn btn-primary btn-block mb-4">
+                                                       
+                                            
+
+                                                    <div class="text-center">
+                                                        <p>already have an account? <a href="/login">login</a></p>
+                                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </button>
+
+                                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                                            <i class="fab fa-google"></i>
+                                                        </button>
+
+                                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </button>
+
+                                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                                            <i class="fab fa-github"></i>
+                                                        </button>
+                                                    </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+   
+            </section>
+        
+
+            <%- include('../layouts/footer.ejs') %>

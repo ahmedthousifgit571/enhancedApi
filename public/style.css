@@ -1,0 +1,40 @@
+a{
+
+    text-decoration: none;
+}
+
+
+
+
+
+  
+  
+  .input-control input:focus , .input-control textarea:focus{
+    
+    outline: 0;
+  }
+  .input-control.success  input, .input-control.success textarea{
+    
+   
+    border: solid rgb(60, 227, 0) 2px;
+    }
+    .input-control.error  input, .input-control.error textarea{
+    
+   
+      border: solid rgb(255, 47, 47) 2px;
+      }
+      .input-control .error {
+        color: red;
+        font-size: 13px;
+        
+      }
+
+
+      .error{
+        height: 13px;
+        color: red;
+        font-size: 13px;
+      }
+  
+     
+  

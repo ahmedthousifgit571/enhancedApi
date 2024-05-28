@@ -128,8 +128,10 @@ const newUserLoad = async (req, res) => {
 
 const addUser = async (req, res) => {
     try {
-
+        const userCount = await User.countDocuments();
+        const newUserId = userCount + 1;
         const user = User({
+            id: newUserId,
             name: req.body.name,
             email: req.body.email,
             mobile: req.body.mno,

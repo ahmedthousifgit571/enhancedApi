@@ -47,5 +47,7 @@ user_route.get("/logout", auth.isLogin, userController.userLogout);
 user_route.get("/edit", auth.isLogin, userController.editLoad);
 user_route.post("/edit", upload.single("image"), userController.updateProfile);
 user_route.get("/user/:id", auth.isLogin, userController.getUserById);
+user_route.post('/update-visibility', auth.isLogin, userController.updateVisibility);
+
 
 module.exports = user_route;

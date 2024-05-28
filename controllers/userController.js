@@ -128,24 +128,45 @@ const updateProfile = async (req, res) => {
 
 const getUserById = async (req, res) => {
   try {
-      const userId = parseInt(req.params.id);
-      const user = await User.findOne({ id: userId });
+    const userId = parseInt(req.params.id);
+    const user = await User.findOne({ id: userId });
 
-      if (user) {
-          // Fetch user's role from the database
-          const loggedInUser = await User.findById(req.session.user_id);
+    if (user) {
+      // Fetch logged in user (the one making the request)
+      const loggedInUser = await User.findById(req.session.user_id);
 
-          res.render('profile', { status: 200, user, loggedInUser });
+      // If the logged in user is admin or the profile is public, show the profile
+      if (loggedInUser.is_admin || user.is_public) {
+        res.render('profile', { status: 200, user, loggedInUser });
       } else {
-          res.render('profile', { status: 404, message: 'User not found' });
+        res.render('profile', { status: 403, message: 'You do not have permission to view this profile.' });
       }
+    } else {
+      res.render('profile', { status: 404, message: 'User not found' });
+    }
   } catch (error) {
-      console.log(error.message);
-      if (!res.headersSent) {
-          res.render('profile', { status: 500, message: 'An error occurred while fetching the user' });
-      }
+    console.log(error.message);
+    if (!res.headersSent) {
+      res.render('profile', { status: 500, message: 'An error occurred while fetching the user' });
+    }
+  }
+};
+
+
+const updateVisibility =async (req, res) => {
+  const { user_id, is_public } = req.body;
+
+  try {
+    await User.updateOne({ _id: user_id }, { is_public: is_public });
+    res.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false });
   }
 }
+
+
+
 
 
 module.exports = {
@@ -158,4 +179,5 @@ module.exports = {
   editLoad,
   updateProfile,
   getUserById, // Export the new function
+  updateVisibility
 };
